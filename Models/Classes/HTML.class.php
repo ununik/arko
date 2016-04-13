@@ -2,7 +2,18 @@
 class HTML
 {
 	private $_title = '';
+	private $_getPage = 'home';
+	private $_topNavigation = array();
 	private $_content = '';
+	
+	public function setPage($new)
+	{
+		$this->_getPage = $new;
+	}
+	public function getPage()
+	{
+		return $this->_getPage;
+	}
 	
 	public function setTitle($new)
 	{
@@ -11,6 +22,15 @@ class HTML
 	public function getTitle()
 	{
 		return $this->_title;
+	}
+	
+	public function addToTopNavigation($new)
+	{
+		$this->_topNavigation[] = $new;
+	}
+	public function getTopNavigation()
+	{
+		return $this->_topNavigation;
 	}
 	
 	public function addToContent($new)

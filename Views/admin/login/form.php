@@ -1,6 +1,14 @@
 <?php
 $container = '<h1>Login</h1>';
 
+if (count($login->getErrors()) > 0) {
+	$container .= '<ul>';
+	foreach ($login->getErrors() as $err) {
+		$container .= '<li>' . $err . '</li>';
+	}
+	$container .= '</ul>';
+}
+
 $container .= '<form action="" method="post">';
 
 $container .= '<div class="form_input_text_and_labels">';
